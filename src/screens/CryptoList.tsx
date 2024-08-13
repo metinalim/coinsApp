@@ -28,13 +28,15 @@ const CryptoListScreen = () => {
   };
 
   return (
-    <View>
-      <FlatList
-        data={cryptoList}
-        renderItem={CryptoListRow}
-        keyExtractor={(item) => item.symbol}
-      />
-    </View>
+    cryptoList.length > 0 ?
+      <View>
+        <FlatList
+          data={cryptoList}
+          renderItem={CryptoListRow}
+          keyExtractor={(item) => item.symbol}
+        />
+      </View>
+      : <Text>Loading...</Text>
   );
 };
 

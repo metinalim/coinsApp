@@ -18,7 +18,7 @@ export const listCryptos = async () => {
   }
 };
 
-export const getCrypto = async (symbol: string): Promise<Candle[]> => {
+export const getCrypto = async (symbol: string, minimizeLimit = 100): Promise<Candle[]> => {
   try {
     // console.log("getCrypto", symbol)
     const url = `${API_BASE_URL}/klines?access_key=${access_key}`
@@ -28,9 +28,10 @@ export const getCrypto = async (symbol: string): Promise<Candle[]> => {
     fromDate = fromDate / 1000
     symbol = `${symbol}USDT`
     const response = await axios.get(url, { params: { symbol, fromDate } });
+    // console.log("response", response);
     let { data } = response.data
     // console.log("data", data)
-    if (data.length > 100) {
+    if (data.length > minimizeLimit) {
       data = minimizeCandlesData(data as Candle[]);
     }
     return data as Candle[];

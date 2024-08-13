@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useAppDispatch } from '../redux/hooks';
-import { Crypto, setCryptoList, setCryptoCandles } from '../redux/cryptoSlice';
+import { setCryptoList, setCryptoCandles } from '../redux/cryptoSlice';
 import { observableCryptoList, observableCryptoDetails } from '../redux/cryptoRx';
 import { useIsFocused } from '@react-navigation/native';
 import { Subscription } from 'rxjs';

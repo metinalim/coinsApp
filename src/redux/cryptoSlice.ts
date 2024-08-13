@@ -14,10 +14,10 @@ export type Candle = {
   high: number;
   low: number;
   open: number;
-  amount: number;
-  id: number;
-  count: number;
-  vol: number;
+  // amount: number;
+  // id: number;
+  // count: number;
+  // vol: number;
 };
 
 // Thunks for async operations
