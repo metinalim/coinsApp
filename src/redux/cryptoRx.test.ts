@@ -1,4 +1,3 @@
-// test for cryptoRx
 import { observableCryptoList, observableCryptoDetails } from './cryptoRx';
 import { listCryptos, getCrypto } from '../services/api';
 import { firstValueFrom } from 'rxjs';

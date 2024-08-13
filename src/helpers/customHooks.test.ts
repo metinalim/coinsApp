@@ -1,12 +1,10 @@
-// test for customHooks
 import { renderHook } from '@testing-library/react-hooks';
 import { useCryptoList, useGetCrypto } from './customHooks';
 import { observableCryptoList, observableCryptoDetails } from '../redux/cryptoRx';
 import { setCryptoList, setCryptoCandles } from '../redux/cryptoSlice';
-import { Subscription, Subject, firstValueFrom } from 'rxjs';
+import { firstValueFrom } from 'rxjs';
 import { useAppDispatch } from '../redux/hooks';
 import { useIsFocused } from '@react-navigation/native';
-import { TestScheduler } from 'rxjs/testing';
 
 jest.mock('../redux/cryptoSlice');
 jest.mock('../redux/hooks');
@@ -17,10 +15,6 @@ jest.mock('../services/api', () => ({
   listCryptos: () => Promise.resolve([{ symbol: 'BTC' }]),
   getCrypto: () => Promise.resolve([{ time: 1 }]),
 }));
-
-const testScheduler = new TestScheduler((actual, expected) => {
-  expect(actual).toEqual(expected);
-});
 
 describe('customHooks', () => {
   describe('useCryptoList', () => {

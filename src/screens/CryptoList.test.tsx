@@ -1,10 +1,8 @@
-// test for CryptoList
 import React from 'react';
 import { render } from '@testing-library/react-native';
 import CryptoList from './CryptoList';
 import { Provider } from 'react-redux';
 import store from '../redux/store';
-import { formatLabel } from '../helpers/commonHelpers';
 
 // mock useIsFocused, useNavigation  hook
 jest.mock('@react-navigation/native', () => ({

@@ -4,8 +4,6 @@ jest.mock('react-native-wagmi-charts', () => ({
 }));
 
 import { formatLabel, minimizeCandlesData } from "./commonHelpers";
-// import { formatDatetime } from 'react-native-wagmi-charts';
-
 
 describe("Common Helpers", () => {
   it("formatLabel formats the label correctly", () => {

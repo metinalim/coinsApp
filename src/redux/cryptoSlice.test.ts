@@ -1,7 +1,6 @@
-// test for cryptoSlice.ts
 import cryptoReducer, { setCryptoList, setCryptoCandles, fetchCryptoDetail } from './cryptoSlice';
 import { Candle } from './cryptoSlice';
-import { listCryptos, getCrypto } from '../services/api';
+import { getCrypto } from '../services/api';
 import { RootState } from './store';
 import { configureStore } from '@reduxjs/toolkit';
 
@@ -51,7 +50,7 @@ describe('cryptoSlice', () => {
       });
 
       const cryptoDetails = [{ symbol: 'BTC' }];
-      (getCrypto as jest.Mock).mockResolvedValue(cryptoDetails);
+      (getCrypto as jest.Mock).mockResolvedValue(cryptoDetails); 3
 
       await store.dispatch(fetchCryptoDetail('BTC'));
 

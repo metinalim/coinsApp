@@ -29,7 +29,6 @@ describe('api', () => {
       expect(result).toEqual([]);
     });
   });
-
   describe('getCrypto', () => {
     it('should return crypto details', async () => {
       const cryptoDetails: Candle[] = [
@@ -42,7 +41,6 @@ describe('api', () => {
 
       expect(result).toEqual(cryptoDetails);
     });
-
     it('should return empty array on error', async () => {
       (axios.get as jest.Mock).mockRejectedValue('error');
 
@@ -50,7 +48,6 @@ describe('api', () => {
 
       expect(result).toEqual([]);
     });
-
     it('should minimize candles data if length is greater than minimizeLimit', async () => {
       const cryptoDetails: Candle[] = [
         { symbol: 'BTC', close: 1000, high: 2000, low: 500, open: 1500, timestamp: 123456789 },

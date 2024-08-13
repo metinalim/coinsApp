@@ -33,7 +33,6 @@ jest.mock('../helpers/commonHelpers', () => ({
 describe('CryptoDetails', () => {
   it('renders correctly', async () => {
     const symbol = 'BTC';
-    // pass symbol as navigation prop
     const { getByText } = await render(
       <Provider store={store}>
         <CryptoDetails route={{ params: { symbol } }} />
