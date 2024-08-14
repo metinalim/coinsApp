@@ -16,15 +16,16 @@ describe('api', () => {
       const cryptoList = [{ symbol: 'BTC' }];
       (axios.get as jest.Mock).mockResolvedValue({ data: { success: true, data: cryptoList } });
 
-      const result = await listCryptos();
+      // test with useMockData = false to test the actual api call
+      const result = await listCryptos(false);
 
       expect(result).toEqual(cryptoList);
     });
-
     it('should return empty array on error', async () => {
       (axios.get as jest.Mock).mockRejectedValue('error');
 
-      const result = await listCryptos();
+      // test with useMockData = false to test the actual api call
+      const result = await listCryptos(false);
 
       expect(result).toEqual([]);
     });
@@ -37,14 +38,16 @@ describe('api', () => {
       ];
       (axios.get as jest.Mock).mockResolvedValue({ data: { success: true, data: cryptoDetails } });
 
-      const result = await getCrypto('BTC');
+      // test with useMockData = false to test the actual api call
+      const result = await getCrypto('BTC', 100, false);
 
       expect(result).toEqual(cryptoDetails);
     });
     it('should return empty array on error', async () => {
       (axios.get as jest.Mock).mockRejectedValue('error');
 
-      const result = await getCrypto('BTC');
+      // test with useMockData = false to test the actual api call
+      const result = await getCrypto('BTC', 100, false);
 
       expect(result).toEqual([]);
     });
@@ -55,7 +58,8 @@ describe('api', () => {
       ];
       (axios.get as jest.Mock).mockResolvedValue({ data: { success: true, data: cryptoDetails } });
 
-      const result = await getCrypto('BTC', 1);
+      // test with useMockData = false to test the actual api call
+      const result = await getCrypto('BTC', 1, false);
 
       expect(result).toEqual(cryptoDetails);
     });

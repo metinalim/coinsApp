@@ -6,9 +6,11 @@ import klines from './mockData/klines.json';
 
 const access_key = '6163179b2f3AswGRx0OKM8699'
 const API_BASE_URL = `http://localhost:7391/api/`;
-const useMockData = true;
 
-export const listCryptos = async () => {
+// set useMock to true for local builds demonstration
+const useMock = true;
+
+export const listCryptos = async (useMockData = useMock) => {
   try {
     let response
     if (useMockData) {
@@ -26,7 +28,7 @@ export const listCryptos = async () => {
   }
 };
 
-export const getCrypto = async (symbol: string, minimizeLimit = 100): Promise<Candle[]> => {
+export const getCrypto = async (symbol: string, minimizeLimit = 100, useMockData = useMock): Promise<Candle[]> => {
   try {
     let response
     const url = `${API_BASE_URL}/klines?access_key=${access_key}`
