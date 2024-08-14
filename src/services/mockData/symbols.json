@@ -1,0 +1,65 @@
+{
+  "success": "true",
+  "data": [
+    {
+      "symbol": "XRP",
+      "close": 0.5742
+    },
+    {
+      "symbol": "DOGE",
+      "close": 0.10404
+    },
+    {
+      "symbol": "SOL",
+      "close": 146.08
+    },
+    {
+      "symbol": "PEPE",
+      "close": 0.00000804
+    },
+    {
+      "symbol": "LTC",
+      "close": 61.48
+    },
+    {
+      "symbol": "AVAX",
+      "close": 20.85
+    },
+    {
+      "symbol": "MANA",
+      "close": 0.2764
+    },
+    {
+      "symbol": "ENJ",
+      "close": 0.1367
+    },
+    {
+      "symbol": "BTC",
+      "close": 58845.5
+    },
+    {
+      "symbol": "BCH",
+      "close": 346.3
+    },
+    {
+      "symbol": "ADA",
+      "close": 0.3342
+    },
+    {
+      "symbol": "ETH",
+      "close": 2639.78
+    },
+    {
+      "symbol": "NEAR",
+      "close": 4.069
+    },
+    {
+      "symbol": "DOT",
+      "close": 4.478
+    },
+    {
+      "symbol": "ETC",
+      "close": 18.83
+    }
+  ]
+}
